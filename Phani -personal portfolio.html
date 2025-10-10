@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phani Jallipalli | Digital Analytics & Technical Consultant</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #004080; /* Deep Ocean Blue */
+            --color-accent: #00A389; /* Vibrant Teal */
+            --color-text: #333333;
+            --color-background: #F5F5F5;
+            --color-experience-border: #FBBF24; /* Amber for highlight */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            scroll-behavior: smooth;
+        }
+        .container-section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            color: var(--color-primary);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Experience Card Specific Styling */
+        .experience-card {
+            border-left: 6px solid var(--color-primary);
+            transition: border-left-color 0.3s ease-in-out;
+        }
+        .experience-card:hover {
+            border-left-color: var(--color-accent);
+        }
+        .metric-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.3rem 0.6rem;
+            background-color: #ECFDF5; /* Light green/teal background */
+            color: var(--color-accent);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skill Bar Animation */
+        .skill-bar-fill {
+            background-color: var(--color-accent);
+            height: 100%;
+            border-radius: 9999px;
+            transition: width 1.5s ease-out;
+            width: 0; /* Initial width for animation */
+        }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'var(--color-primary)',
+                        'accent': 'var(--color-accent)',
+                        'exp-border': 'var(--color-experience-border)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-extrabold text-primary tracking-tight">Phani Jallipalli<span class="text-accent text-3xl">.</span></a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="text-gray-600 hover:text-accent transition duration-200">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-accent transition duration-200">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:text-accent transition duration-200">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-accent transition duration-200">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-accent transition duration-200">Connect</a>
+            </div>
+            <a href="#contact" class="px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold hover:bg-opacity-80 transition duration-300 hidden sm:block">Collaborate</a>
+        </nav>
+    </header>
+
+    <!-- 1. Hero Section – “Phani’s Analytics Playground” -->
+    <section id="hero" class="container-section text-center min-h-screen flex items-center pt-24 pb-12">
+        <div class="max-w-4xl mx-auto animate-on-scroll">
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-primary mb-6">
+                Phani’s Technical <span class="text-accent">Studio</span>
+            </h1>
+            
+            <p class="mt-4 text-2xl md:text-3xl text-gray-700 font-light">
+                Digital Insight Strategist & Technical Data Developer
+            </p>
+            <h2 class="mt-6 text-xl md:text-2xl text-primary italic max-w-2xl mx-auto font-semibold">
+                Turning Data into Decisions, Code into Experiences
+            </h2>
+            <div class="mt-10 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <!-- Primary Action -->
+                <a href="#experience" class="px-8 py-3 bg-accent text-white text-lg font-bold rounded-full shadow-lg hover:bg-opacity-90 transition duration-300">
+                    Explore My Impact
+                </a>
+                <!-- Secondary Action -->
+                <a href="https://linkedin.com/in/phani-kumar-jallipalli" target="_blank" class="px-8 py-3 border border-primary text-primary text-lg font-bold rounded-full hover:bg-primary hover:text-white transition duration-300">
+                    Connect with Me
+                </a>
+                <!-- New Download CV Button -->
+                <a href="https://drive.google.com/file/d/1FpgcyX9Ozv60-nol0bP9ptKUVhdls9JM/view?usp=sharing" target="_blank" class="px-8 py-3 border-2 border-accent text-accent text-lg font-bold rounded-full hover:bg-accent hover:text-white transition duration-300">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 2. About Section – Storytelling Narrative (Updated to Developer focus) -->
+    <section id="about" class="container-section bg-white">
+        <h2 class="section-title text-4xl">My Journey: From Code to Technical Analytics Implementation</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="text-lg space-y-5 animate-on-scroll">
+                <p>
+                    My journey in the world of digital analytics began as a freelance developer while I was simultaneously pursuing my BSc in Data Science. During this time, I worked on developing tools related to <b>Adobe Analytics</b> and <b>Adobe Launch</b>, which not only honed my technical skills but also sparked a deep interest in web analytics. The experience of creating solutions that directly impacted data collection and reporting opened my eyes to the power of <b>analytics in shaping business decisions</b>.
+                </p>
+                <p>
+                    Driven by this newfound passion, I transitioned into web analytics, working with multiple clients to implement tagging solutions and design <b>robust data layers</b>. Each project added a layer of expertise and practical knowledge, and I quickly became proficient at translating complex business requirements into <b>efficient, scalable analytics implementations</b>.
+                </p>
+                <p>
+                    My career took a significant turn when I joined <b>Petco</b>. Over the course of two years, I immersed myself in large-scale analytics projects, <b>optimizing Adobe Launch properties</b>, <b>streamlining tag management in GTM</b>, and implementing e-commerce marketing tags across various platforms. My consistent delivery, problem-solving abilities, and technical acumen led to my promotion to <b>Technical Lead</b>, where I had the opportunity to manage a team and mentor peers, further enhancing my leadership skills.
+                </p>
+                <p>
+                    Eager to grow and explore next-generation Adobe tools, particularly in the <b>Adobe Experience Platform (AEP)</b>, I sought new challenges and found an exciting opportunity at <b>Lenovo</b>. Joining a team that had won the Adobe Experience Maker Award in 2025, I began collaborating with Adobe Analytics champions, contributing to innovative solutions, and further elevating my expertise in <b>enterprise-level analytics</b>.
+                </p>
+                <p>
+                    Today, I stand at the intersection of <b>digital analytics, web development, and AI/ML</b>, blending technical knowledge with strategic insights to drive <b>data-driven business outcomes</b>. My journey has been fueled by curiosity, continuous learning, and a passion for transforming complex data into actionable insights—a journey that continues as I explore the next frontier of analytics and technology.
+                </p>
+            </div>
+            
+            <!-- Focus Areas (Updated for AEP, Governance, Digital Analytics) -->
+            <div class="mt-8 md:mt-0 space-y-4 animate-on-scroll">
+                <h3 class="font-bold text-xl text-gray-800 mb-4">Core Architectural Focus</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                        <div data-lucide="layers" class="w-6 h-6 text-accent mb-2"></div>
+                        <p class="text-sm font-bold text-primary">Data Layer Design</p>
+                        <p class="text-xs text-gray-500">Schema unification & governance.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                        <div data-lucide="package" class="w-6 h-6 text-accent mb-2"></div>
+                        <p class="text-sm font-bold text-primary">Tag Management (Launch/GTM)</p>
+                        <p class="text-xs text-gray-500">Deployment and optimization.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                        <div data-lucide="shield-check" class="w-6 h-6 text-accent mb-2"></div>
+                        <p class="text-sm font-bold text-primary">Data Governance & Privacy</p>
+                        <p class="text-xs text-gray-500">CCPA/GDPR compliance, OneTrust.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                        <div data-lucide="cloud-cog" class="w-6 h-6 text-accent mb-2"></div>
+                        <p class="text-sm font-bold text-primary">Adobe Experience Platform (AEP)</p>
+                        <p class="text-xs text-gray-500">Customer Data Platforms (CDP) & Real-time data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Skills Section – “My Technical Inventory” -->
+    <section id="skills" class="container-section">
+        <h2 class="section-title text-4xl">Technical Inventory: Skills & Proficiencies</h2>
+        <div id="skills-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Skills Cards will be populated by JS for interactivity -->
+        </div>
+    </section>
+
+    <!-- 4. Experience Section – “Quantifiable Impact” -->
+    <section id="experience" class="container-section bg-white">
+        <h2 class="section-title text-4xl">Experience: Quantifiable Impact & Technical Leadership</h2>
+        <div class="space-y-8 max-w-5xl mx-auto">
+            
+            <!-- Lenovo Card -->
+            <div class="card p-6 experience-card animate-on-scroll">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-primary">Lenovo (SDI Business)</h3>
+                        <p class="text-xl font-semibold text-gray-600">Senior Digital Analytics Developer (Contractor)</p>
+                    </div>
+                    <span class="text-sm text-gray-500 font-medium mt-2 sm:mt-0">Jul 2025 - Present</span>
+                </div>
+                <h4 class="mt-4 text-xl font-bold text-accent">Strategic Architecture & Data Governance</h4>
+                
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="metric-badge"><div data-lucide="shield-check" class="w-4 h-4 mr-1"></div>Global Privacy Compliance</span>
+                    <span class="metric-badge"><div data-lucide="cloud-cog" class="w-4 h-4 mr-1"></div>CJA Schema Design</span>
+                    <span class="metric-badge"><div data-lucide="cpu" class="w-4 h-4 mr-1"></div>QA Automation (ObservePoint)</span>
+                </div>
+
+                <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2 ml-4">
+                    <li class="pl-2">Authored comprehensive <b>technical specifications</b> translating complex business requirements into clear, actionable analytics implementations.</li>
+                    <li class="pl-2"><b>Automated digital analytics QA</b> using ObservePoint, significantly improving validation efficiency and overall data accuracy.</li>
+                    <li class="pl-2">Designed and implemented data <b>schemas and classifications within Customer Journey Analytics (CJA)</b> to enhance reporting flexibility and dimensionality.</li>
+                    <li class="pl-2">Managed data source configurations and uploads to successfully <b>resolve critical data gaps</b> and ensure consistent reporting integrity across all platforms.</li>
+                    <li class="pl-2">Led the implementation of <b>consent management</b> integration for analytics across all Lenovo domains, ensuring stringent global privacy compliance.</li>
+                </ul>
+            </div>
+
+            <!-- Petco Card (Consolidated) -->
+            <div class="card p-6 experience-card animate-on-scroll">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-primary">Petco</h3>
+                        <p class="text-xl font-semibold text-gray-600">Technical Lead & Digital Analytics Consultant (Full-Time & Contractor)</p>
+                    </div>
+                    <span class="text-sm text-gray-500 font-medium mt-2 sm:mt-0">Sep 2022 - Jul 2025</span>
+                </div>
+                <h4 class="mt-4 text-xl font-bold text-accent">Technical Leadership, Consolidation & Data Quality</h4>
+                
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="metric-badge"><div data-lucide="shuffle" class="w-4 h-4 mr-1"></div>Consolidation (10 to 2)</span>
+                    <span class="metric-badge"><div data-lucide="code" class="w-4 h-4 mr-1"></div>Advanced JS & Launch</span>
+                    <span class="metric-badge"><div data-lucide="trending-up" class="w-4 h-4 mr-1"></div>80% Discrepancy Resolution</span>
+                </div>
+
+                <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2 ml-4">
+                    <li class="pl-2">Served as the <b>SME</b> for Adobe Analytics, providing strategic consulting and best practices to marketing and product teams.</li>
+                    <li class="pl-2">Led a high-performing digital analytics team to deliver impactful business solutions, including collaborating to <b>integrate a recommendation widget that drove substantial ROI</b>.</li>
+                    <li class="pl-2">Leveraged <b>JavaScript extensively</b> for Adobe Launch implementations, creating custom scripts, event tracking, and <b>cross-device ECID stitching</b> to unify customer data.</li>
+                    <li class="pl-2">Achieved significant governance by <b>reducing the GTM tag count by 75%</b> and successfully <b>consolidating 10 legacy Adobe Launch properties into 2 core environments</b>.</li>
+                    <li class="pl-2">Troubleshot and <b>resolved 80% of data discrepancies</b> across reporting tools following rigorous data quality audits with ObservePoint, ensuring <b>95% data integrity</b>.</li>
+                    <li class="pl-2">Integrated CCPA compliance solutions using <b>OneTrust</b> within Adobe Launch and GTM environments.</li>
+                </ul>
+            </div>
+
+            <!-- Vivaan Consulting Card -->
+            <div class="card p-6 experience-card animate-on-scroll">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-primary">Vivaan Consulting</h3>
+                        <p class="text-xl font-semibold text-gray-600">Digital Analytics Consultant (Contractor)</p>
+                    </div>
+                    <span class="text-sm text-gray-500 font-medium mt-2 sm:mt-0">Nov 2021 - Sep 2022</span>
+                </div>
+                <h4 class="mt-4 text-xl font-bold text-accent">Foundation Building: React, Mobile SDKs & Data Layer Development</h4>
+                
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="metric-badge"><div data-lucide="react" class="w-4 h-4 mr-1"></div>React Data Layer Dev</span>
+                    <span class="metric-badge"><div data-lucide="layers" class="w-4 h-4 mr-1"></div>Data Layer Optimization</span>
+                    <span class="metric-badge"><div data-lucide="smartphone" class="w-4 h-4 mr-1"></div>Mobile SDK & Media Pixels</span>
+                </div>
+
+                <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2 ml-4">
+                    <li class="pl-2">Developed a <b>dynamic data layer (DL) in React</b> to streamline data collection and seamless integration with Adobe Analytics.</li>
+                    <li class="pl-2">Authored comprehensive <b>technical specifications for seamless Mobile SDK implementations</b> and configured tags in GTM to enhance tracking accuracy.</li>
+                    <li class="pl-2">Designed and <b>optimized data layers</b> to align with specific client business requirements, ensuring robust and scalable analytics.</li>
+                    <li class="pl-2">Developed a custom <b>QA tool</b> to streamline Adobe Launch debugging processes, significantly improving project delivery quality and efficiency.</li>
+                    <li class="pl-2">Implemented diverse <b>media marketing pixels</b> using Adobe Launch to effectively support client marketing campaigns.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Projects Section – “Lab of Experiments & Insights” -->
+    <section id="projects" class="container-section">
+        <h2 class="section-title text-4xl">Lab of Experiments & Insights: The Portfolio</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 1: Kanban Board -->
+            <div class="card p-6 animate-on-scroll">
+                <div class="text-3xl text-accent mb-3" data-lucide="layout-dashboard"></div>
+                <h3 class="text-2xl font-bold text-primary">Kanban-Board Full-Stack Application</h3>
+                <p class="mt-2 text-gray-700">Workflow Dynamo: A full-stack task management solution showcasing end-to-end development mastery.</p>
+                <div class="mt-4 space-y-2">
+                    <p class="text-sm font-semibold text-gray-600">Tech Stack: <span class="font-normal text-primary">Flask (API), Vue.js (Frontend), SQLite</span></p>
+                    <p class="text-sm font-semibold text-gray-600">Impact: Demonstrated proficiency in scalable architecture and seamless data flow.</p>
+                </div>
+                <div class="mt-6 flex space-x-3 text-sm font-medium">
+                    <a href="https://kanban-board-frontend-eta.vercel.app/" target="_blank" class="text-white bg-accent px-4 py-2 rounded-full hover:bg-opacity-80 transition">Live Demo</a>
+                    <a href="https://github.com/phanijallipalli/kanban-board-frontend" target="_blank" class="text-primary border border-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Offline Ollama Chatbot UI -->
+            <div class="card p-6 animate-on-scroll">
+                <div class="text-3xl text-accent mb-3" data-lucide="bot"></div>
+                <h3 class="text-2xl font-bold text-primary">Offline Ollama Chatbot UI</h3>
+                <p class="mt-2 text-gray-700">Local LLM Interface: A customizable message interface for interacting with multiple offline Ollama models.</p>
+                <div class="mt-4 space-y-2">
+                    <p class="text-sm font-semibold text-gray-600">Tech Stack: <span class="font-normal text-primary">Python, JavaScript/HTML/CSS, Ollama API</span></p>
+                    <p class="text-sm font-semibold text-gray-600">Impact: Showcases adaptability in integrating emerging AI technology for local application development.</p>
+                </div>
+                <div class="mt-6 flex space-x-3 text-sm font-medium">
+                    <a href="https://github.com/phanijallipalli/ollama-chatbot-ui" target="_blank" class="text-primary border border-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition">GitHub</a>
+                </div>
+            </div>
+            
+            <!-- Project 3: Movie Review Sentiment Prediction -->
+            <div class="card p-6 animate-on-scroll">
+                <div class="text-3xl text-accent mb-3" data-lucide="trending-up"></div>
+                <h3 class="text-2xl font-bold text-primary">Movie Review Sentiment Prediction</h3>
+                <p class="mt-2 text-gray-700">Predicting Emotion: A machine learning journey using Scikit-learn for sentiment analysis.</p>
+                <div class="mt-4 space-y-2">
+                    <p class="text-sm font-semibold text-gray-600">Tech Stack: <span class="font-normal text-primary">Python, Scikit-learn, Pandas, Matplotlib</span></p>
+                    <p class="text-sm font-semibold text-gray-600">Insight: Demonstrated data manipulation and algorithmic understanding for model prediction.</p>
+                </div>
+                <div class="mt-6 flex space-x-3 text-sm font-medium">
+                    <a href="https://colab.research.google.com/drive/1D0gE5qcUkZb9LkhWIKbqw5Xjmy8gU9rO?usp=sharing" target="_blank" class="text-primary border border-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 4: Retail Rice Store Case Study -->
+            <div class="card p-6 animate-on-scroll">
+                <div class="text-3xl text-accent mb-3" data-lucide="bar-chart-3"></div>
+                <h3 class="text-2xl font-bold text-primary">Retail Rice Store Case Study</h3>
+                <p class="mt-2 text-gray-700">Data-Driven Commerce: Comprehensive analysis of sales and conversion rates to identify performance drivers.</p>
+                <div class="mt-4 space-y-2">
+                    <p class="text-sm font-semibold text-gray-600">Focus: <span class="font-normal text-primary">Business Insights, Data Reporting, Strategic Recommendations</span></p>
+                    <p class="text-sm font-semibold text-gray-600">Impact: Delivered actionable recommendations to enhance overall sales performance for the client.</p>
+                </div>
+                <div class="mt-6 flex space-x-3 text-sm font-medium">
+                    <a href="https://drive.google.com/file/d/1k6Nm9oM4zvaQ-R7ccct4ig8QbmhEydTG/view?usp=sharing&usp=embed_facebook" target="_blank" class="text-primary border border-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition">View Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section – “Collaborate & Co-Create” -->
+    <section id="contact" class="container-section">
+        <h2 class="section-title text-4xl text-center">Collaborate & Co-Create: Let’s Connect</h2>
+        <p class="text-center text-xl text-gray-700 mb-8">
+            I'm currently seeking opportunities where Digital Analytics meets Technical Implementation.
+        </p>
+
+        <div class="max-w-xl mx-auto card p-8">
+            <h3 class="text-2xl font-bold text-primary mb-6">Let’s turn your data into actionable insights.</h3>
+            <!-- Form now has an ID and fields have IDs for JS handling -->
+            <form id="contact-form" class="space-y-4">
+                <input type="text" id="contact-name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                <input type="email" id="contact-email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                <input type="text" id="contact-subject" placeholder="Subject" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                <textarea rows="4" id="contact-message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"></textarea>
+                <button type="submit" class="w-full p-3 bg-accent text-white font-bold rounded-lg shadow-md hover:bg-opacity-90 transition duration-300">
+                    Send Insight
+                </button>
+                <!-- Enhanced success message for clarity -->
+                <p id="success-message" class="text-center text-accent font-bold hidden p-2 bg-green-50 rounded-lg border border-accent">
+                    ✅ Preparing your email... please check your email client.
+                </p>
+            </form>
+        </div>
+
+        <div class="mt-10 text-center space-y-3">
+            <p class="text-lg font-semibold text-primary">Find me on other platforms:</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/phani-kumar-jallipalli" target="_blank" class="text-primary hover:text-accent transition" aria-label="LinkedIn">
+                    <div data-lucide="linkedin" class="w-8 h-8"></div>
+                </a>
+                <a href="https://github.com/phanijallipalli" target="_blank" class="class="text-primary hover:text-accent transition"" aria-label="GitHub">
+                    <div data-lucide="github" class="w-8 h-8"></div>
+                </a>
+                <a href="https://wa.me/918317566775" target="_blank" class="text-primary hover:text-whatsapp transition" aria-label="WhatsApp">
+                    <div data-lucide="message-circle" class="w-8 h-8"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8 mt-12">
+        <div class="container-section text-center text-gray-400 text-sm">
+            &copy; <span id="current-year"></span> Phani Jallipalli. All rights reserved. | Built on Logic, Driven by Data.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // --- Scroll Animation Logic (Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+            
+            // --- Skills Section Rendering and Animation (Fixed Logic) ---
+            const skillsData = [
+                { category: 'Core Digital Analytics', icon: 'zap', items: ['Adobe Analytics (AA)', 'Google Analytics (GA4/UA)', 'Analysis & Reporting', 'Adobe Workspace'], proficiency: 95 },
+                { category: 'Tag Management Systems', icon: 'tag', items: ['Adobe Launch (DTM)', 'Google Tag Manager (GTM)', 'Data Layer Design (Schema)', 'ObservePoint & QA Tools'], proficiency: 98 },
+                { category: 'Data & Experience Platforms', icon: 'cloud-cog', items: ['Adobe Experience Platform (AEP)', 'Customer Journey Analytics (CJA)', 'AEP Web SDK', 'Real-Time Customer Profiles'], proficiency: 88 },
+                { category: 'Technical Implementation', icon: 'code', items: ['JavaScript (ES6+)', 'HTML/CSS', 'SQL & Data Wrangling', 'Regex & Custom Code'], proficiency: 92 },
+            ];
+
+            const skillsGrid = document.getElementById('skills-grid');
+            let skillObserver;
+            
+            // Set up intersection observer specifically for skills bars animation
+            if ('IntersectionObserver' in window) {
+                skillObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Trigger animation by setting the final width
+                            entry.target.querySelectorAll('.skill-bar-fill').forEach(fill => {
+                                const width = fill.getAttribute('data-proficiency');
+                                fill.style.width = width;
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 }); // High threshold to ensure it's visible before animating
+            }
+
+            // Loop through data, create cards, append to grid, and set up observers
+            skillsData.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = 'card p-6 animate-on-scroll';
+                card.innerHTML = `
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div data-lucide="${skill.icon}" class="w-6 h-6 text-accent"></div>
+                        <h3 class="text-xl font-bold text-primary">${skill.category}</h3>
+                    </div>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4 ml-4 text-sm">
+                        ${skill.items.map(item => `<li class="hover:text-accent transition duration-150">${item}</li>`).join('')}
+                    </ul>
+                    <div class="mt-4">
+                        <p class="text-xs font-semibold text-gray-500 mb-1">Proficiency (${skill.proficiency}%)</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar-fill h-full rounded-full" data-proficiency="${skill.proficiency}%"></div>
+                        </div>
+                    </div>
+                `;
+                
+                // Append card
+                skillsGrid.appendChild(card);
+                
+                // Observe for general fade-in
+                observer.observe(card);
+                
+                // Observe for skill bar width animation
+                if (skillObserver) {
+                    skillObserver.observe(card);
+                }
+            });
+
+            // Recreate icons after generating dynamic content
+            lucide.createIcons();
+
+
+            // --- Contact Form Submission Handler ---
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Stop default form submission
+
+                    const name = document.getElementById('contact-name').value;
+                    const email = document.getElementById('contact-email').value;
+                    const subject = document.getElementById('contact-subject').value;
+                    const message = document.getElementById('contact-message').value;
+
+                    const recipient = 'Phani.jallipalli786@gmail.com';
+                    
+                    // Construct the email body with proper line breaks (%0D%0A)
+                    const emailBody = `Sender Name: ${name}%0D%0ASender Email: ${email}%0D%0A%0D%0A--- Message ---%0D%0A${message}`;
+                    
+                    // Construct the mailto link, encoding subject and body for safety
+                    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+                    // 1. Show success message (instant feedback)
+                    successMessage.classList.remove('hidden');
+
+                    // 2. Open the mail client after a small delay for the user to register the success message
+                    setTimeout(() => {
+                        window.location.href = mailtoLink;
+                        
+                        // 3. Clear the form and hide the message (assuming the user's email client handles the task)
+                        contactForm.reset();
+                        successMessage.classList.add('hidden');
+
+                    }, 700); 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
